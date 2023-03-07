@@ -39,6 +39,6 @@ inputs = {
     #key_name               = "fatih-key"
     monitoring             = false
     vpc_security_group_ids = [dependency.security-group.outputs.security_group_id]
-    subnet_id              = "subnet-06eb2e0a0f5449182" #[dependency.vpc.outputs.private_subnets[1]] 
+    subnet_id              = "subnet-0992dc70c94778017" #[dependency.vpc.outputs.private_subnets[1]] 
     associate_public_ip_address = true
 }
