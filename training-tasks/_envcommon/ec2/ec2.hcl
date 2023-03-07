@@ -1,5 +1,6 @@
 terraform {
     source = "${dirname(find_in_parent_folders())}//infra-modules/terraform-aws-ec2-instance-master"
+    #source = "https://github.com/fatihhkocyigit/Terraform-AWS-Training/tree/master/training-tasks/infra-modules/terraform-aws-ec2-instance-master"
 }
 
 locals {
