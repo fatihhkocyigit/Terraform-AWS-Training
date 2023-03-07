@@ -34,7 +34,7 @@ inputs = {
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
-        cidr_blocks = "10.0.0.0/16"
+        cidr_blocks = "0.0.0.0/0"
     }]
 
     ingress_with_cidr_blocks = [{
@@ -42,13 +42,13 @@ inputs = {
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
-        cidr_blocks = "10.0.0.0/16"
+        cidr_blocks = "0.0.0.0/0"
     }]
 
     egress_with_cidr_blocks = [{
         from_port   = 0
         to_port     = 0
         protocol    = "all"
-        cidr_blocks = "10.0.0.0/16"
+        cidr_blocks = "0.0.0.0/0"
     }]
 }
