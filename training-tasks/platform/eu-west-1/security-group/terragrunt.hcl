@@ -29,17 +29,26 @@ inputs = {
     description = "security group for ec2"
     vpc_id      = dependency.vpc.outputs.vpc_id
 
-    ingress = {
-        description      = "TLS from VPC"
-        from_port        = 443
-        to_port          = 443
-        protocol         = "tcp"
-        cidr_blocks      = "0.0.0.0/0"
-    }
-    egress = {
-        from_port        = 0
-        to_port          = 0
-        protocol         = "-1"
-        cidr_blocks      = "0.0.0.0/0"
-    }
+    ingress_with_cidr_blocks = [{
+        description = "Port 80 ingress"
+        from_port   = 80
+        to_port     = 80
+        protocol    = "tcp"
+        cidr_blocks = "10.0.0.0/16"
+    }]
+
+    ingress_with_cidr_blocks = [{
+        description = "Port 22 ingress"
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks = "10.0.0.0/16"
+    }]
+
+    egress_with_cidr_blocks = [{
+        from_port   = 0
+        to_port     = 0
+        protocol    = "all"
+        cidr_blocks = "10.0.0.0/16"
+    }]
 }
