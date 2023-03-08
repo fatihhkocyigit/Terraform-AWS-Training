@@ -34,15 +34,21 @@ inputs = {
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
-        cidr_blocks = "0.0.0.0/0"
+        cidr_blocks = "10.0.0.0/16"
     }]
-
+    ingress_with_self = [
+      {
+        from_port = 0
+        to_port = 0
+        protocol = -1
+      }
+    ]
     ingress_with_cidr_blocks = [{
         description = "Port 22 ingress"
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
-        cidr_blocks = "0.0.0.0/0"
+        cidr_blocks = "10.0.0.0/16"
     }]
 
     egress_with_cidr_blocks = [{
