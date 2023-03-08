@@ -41,4 +41,10 @@ inputs = {
     vpc_security_group_ids = [dependency.security-group.outputs.security_group_id]
     subnet_id              = "subnet-086367272443117d0"#[dependency.vpc.outputs.private_subnets[0]] #TODO
     associate_public_ip_address = true
+
+    user_data = <<EOF
+    #!/bin/bash
+    yum update -y
+    yum install -y ec2-instance-connect
+    EOF
 }
